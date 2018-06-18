@@ -1,0 +1,29 @@
+<a href="/empty"><button type="button" class="btn btn-primary active">Empty Cart</button></a>
+<div class="row">
+    <table class="table">
+    <thead>
+      <tr>
+            <th>Preview</th>
+            <th>Title</th>
+            <th>Brand</th>
+            <th>Quantity</th>
+            <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each cartItem}}
+                <tr>
+                    <td><img src="{{productId.imgUrl}}" alt="..." class="img-responsive"  style="height: 50px;"></td>
+                    <td>{{productId.title}}</td>
+                    <td>{{productId.brandName}}</td>
+                    <td>{{quantity}}</td>
+                    <td>{{price}}</td>
+                    <td><a href="/remove/{{_id}}"><button>x</button></a></td>
+                </tr>
+        {{/each}}
+    </tbody>
+  </table>
+  <h3 style="text-align:right" >
+  <strong>Subtotal({{cart.totalQty}} items)</strong> : {{cart.totalPrice}}
+  </h3>
+</div>
